@@ -1,38 +1,57 @@
-# 以下の①〜⑥を、組み込み関数を使わずに自前で関数として実装する
-list = [1, 2, 3]
-    
-# ①配列の末尾から要素を追加、編集、削除
-def list_add(n):
-    print(list + [n])
+from utils import array_manipulator_last
+from utils import array_manipulator_first
+from utils import array_manipulator_deletion_empty
+from utils import array_manipulator_deletion_nonempty
+from utils import array_manipulator_reverse
 
-user_add = input("配列の末尾に要素を追加してください：")
-list_add(int(user_add))
+        
+# ①array_manipulator_lastクラスをインスタンス化、引数に[0, 1, 2]を代入
+arr_manip_last = array_manipulator_last([0, 1, 2])
 
-def list_edit(n):
-    list[-1] = [n]
-    print(list)
-    
-user_edit = input("配列の末尾を編集してください：")
-list_add(int(user_edit))
+# ①配列の末尾から要素3を追加
+result = arr_manip_last.add(3)
+print(result)
 
-def list_delete():
-    del list[-1]
-    print(list)
+# ①配列の末尾の要素2を-2に編集
+result = arr_manip_last.edit(-2)
+print(result)
 
-print("配列の末尾を削除してよろしいですか？")
-user_delete = input("削除する場合はyを押してください：")
-if user_delete == "y":
-    list_delete()
+# ①配列の末尾から要素2を削除
+result = arr_manip_last.delete()
+print(result)
 
-# ②配列の先頭から要素を追加、編集、削除
-def add_to_beginning(n):
-    print([n]+list)
+# ②array_manipulator_firstクラスをインスタンス化、引数に[0, 1, 2]を代入
+arr_manip_first = array_manipulator_first([0, 1, 2])
 
-user_add = input("配列の末尾に要素を追加してください：")
-add_to_beginning(int(user_add))
+# ②配列の先頭から要素-1を追加
+result = arr_manip_first.add(-1)
+print(result)
+
+# ②配列の先頭の要素0を100に編集
+result = arr_manip_first.edit(100)
+print(result)
+
+# ②配列の先頭から要素0を削除
+result = arr_manip_first.delete()
+print(result)
 
 # ③配列の「特定の場所」から要素を削除して、「削除した番地はあけたまま」
+arr_manip_del_emp = array_manipulator_deletion_empty([0, 1, 2])
+
+# ③配列のインデックス番号１を削除、番地はあけたまま
+result = arr_manip_del_emp.delete(1)
+print(result)
 
 # ④配列の「特定の場所」から要素を削除して、「削除した番地を詰める」
-# ⑤配列の順番を逆さまにする
+arr_manip_del_noemp = array_manipulator_deletion_nonempty([0, 1, 2])
+
+# ④配列のインデックス番号1を削除、番地を詰める
+result = arr_manip_del_noemp.delete(1)
+print(result)
+
+# ⑤配列の順番を逆さまにする(検討中)
+arr_manip_reverse = array_manipulator_reverse([0, 1, 2])
+result = arr_manip_reverse.reverse()
+print(result)
+
 # ⑥配列じゃなくて「辞書型」でも同じようなことができるように
