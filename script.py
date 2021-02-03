@@ -50,7 +50,7 @@ result = arr_manip_del_noemp.delete(1)
 print(result)
 
 # ⑤配列の順番を逆さまにする(検討中)
-arr_manip_reverse = array_manipulator_reverse([0, 1, 2])
+arr_manip_reverse = array_manipulator_reverse([0, 1, 2, 3])
 result = arr_manip_reverse.reverse()
 print(result)
 

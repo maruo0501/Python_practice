@@ -77,4 +77,10 @@ class array_manipulator_reverse:
         arr7 = arr6 + [arr6[1]]
         del arr7[1]
         return arr7
+
+        # for i in self.arr5:
+        #     self.arr5[-1] + self.aa
+
+
         
+
