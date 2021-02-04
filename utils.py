@@ -78,10 +78,22 @@ class array_manipulator_reverse:
         del arr7[1]
         return arr7
 
-        # for i in self.arr5:
-        #     self.arr5[-1] + self.aa
-
 # ⑥配列じゃなくて「辞書型」でも同じようなことができるように
-
-        
+class dict_manipulator_last:
+    dict1 = {}
+    def __init__(self, input_dict: dict):
+        self.dict1 = input_dict
+    
+    # 辞書型の末尾に追加
+    def add(self, n: str, m: str):
+        if n not in self.dict1:
+            self.dict1[n] = m
+        return self.dict1
+   
+    # 辞書型の末尾の要素編集    
+    def edit(self, n: str, m: str):
+        if n in self.dict1:
+            self.dict1[n] = n
+        return self.dict1
+           
 
