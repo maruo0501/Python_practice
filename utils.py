@@ -81,6 +81,7 @@ class array_manipulator_reverse:
         # for i in self.arr5:
         #     self.arr5[-1] + self.aa
 
+# ⑥配列じゃなくて「辞書型」でも同じようなことができるように
 
         
 
