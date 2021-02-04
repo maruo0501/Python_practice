@@ -3,7 +3,7 @@ from utils import array_manipulator_first
 from utils import array_manipulator_deletion_empty
 from utils import array_manipulator_deletion_nonempty
 from utils import array_manipulator_reverse
-
+from utils import dict_manipulator_last
         
 # ①array_manipulator_lastクラスをインスタンス化、引数に[0, 1, 2]を代入
 arr_manip_last = array_manipulator_last([0, 1, 2])
@@ -55,3 +55,14 @@ result = arr_manip_reverse.reverse()
 print(result)
 
 # ⑥配列じゃなくて「辞書型」でも同じようなことができるように
+dict_manip_last = dict_manipulator_last({"apple": "りんご", "grape": "ぶどう", "banana": "バナナ"})
+
+# 辞書型の末尾に追加
+result = dict_manip_last.add("orange", "オレンジ")
+print(result)
+
+# 辞書型の末尾の要素編集   
+result = dict_manip_last.edit("orange", "みかん")
+print(result)
+
+
