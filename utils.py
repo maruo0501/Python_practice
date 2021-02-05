@@ -23,60 +23,65 @@ class array_manipulator_last:
 
 # ②配列の先頭から要素を追加、編集、削除
 class array_manipulator_first:
-    arr2 = []    
+    arr1 = []    
 
     def __init__(self, input_arr: list):
-        self.arr2 = input_arr
+        self.arr1 = input_arr
 
     # ②配列の先頭から要素を追加
     def add(self, n: int):
-        return [n] + self.arr2
+        return [n] + self.arr1
     
     # ②配列の先頭の要素を編集
     def edit(self, n:int):
-        self.arr2[0] = n
-        return self.arr2
+        self.arr1[0] = n
+        return self.arr1
  
     # ②配列の先頭から要素を削除
     def delete(self):
-        del self.arr2[0]
-        return self.arr2
+        del self.arr1[0]
+        return self.arr1
 
 # ③配列の「特定の場所」から要素を削除して、「削除した番地はあけたまま」
 class array_manipulator_deletion_empty:
-    arr3 = []
+    arr1 = []
 
     def __init__(self, input_arr: list):
-          self.arr3 = input_arr
+          self.arr1 = input_arr
 
     def delete(self, n: int):
-          self.arr3[n] = []
-          return self.arr3
+          self.arr1[n] = []
+          return self.arr1
 
 # ④配列の「特定の場所」から要素を削除して、「削除した番地を詰める」
 class array_manipulator_deletion_nonempty:
-    arr4 = []
+    arr1 = []
 
     def __init__(self, input_arr: list):
-        self.arr4 = input_arr
+        self.arr1 = input_arr
     
     def delete(self, n: int):
-        del self.arr4[n]
-        return self.arr4
+        del self.arr1[n]
+        return self.arr1
 
 # ⑤配列の順番を逆さまにする(検討中)
 class array_manipulator_reverse:
-    arr5 = []
-
+    arr1 = []
     def __init__(self, input_arr: list):
-        self.arr5 = input_arr
+        self.arr1 = input_arr
 
     def reverse(self):
-        arr6 = [self.arr5[-1]] + self.arr5
-        del arr6[-1]
-        arr7 = arr6 + [arr6[1]]
-        del arr7[1]
-        return arr7
+        # 長さ（要素数）取得
+        cnt = 0
+        for i in self.arr1:
+            cnt += 1
+        # 空の配列
+        arr2=[0]*cnt
+        last_ind=cnt-1
+        # ひっくり返した番地 = 要素数 - 最初の要素番号
+        for q in range(cnt):
+            arr2[q]=self.arr1[last_ind - q]
+        return arr2
 
 # ⑥配列じゃなくて「辞書型」でも同じようなことができるように
 class dict_manipulator_last:
