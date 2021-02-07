@@ -101,4 +101,17 @@ class dict_manipulator_last:
             self.dict1[n] = n
         return self.dict1
            
-
+    # 辞書型の末尾の要素削除   
+    def delete(self):
+        cnt = 0
+        for i in self.dict1:
+            cnt += 1
+        
+        dict2={}
+        ans = 0
+        for i in self.dict1:
+            dict2[i]=self.dict1[i]
+            ans +=1
+            if ans == cnt-1:
+                break
+        return dict2

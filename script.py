@@ -65,4 +65,6 @@ print(result)
 result = dict_manip_last.edit("orange", "みかん")
 print(result)
 
-
+# 辞書型の末尾の要素削除  
+result = dict_manip_last.delete()
+print(result)
