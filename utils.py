@@ -64,7 +64,7 @@ class array_manipulator_deletion_nonempty:
         del self.arr1[n]
         return self.arr1
 
-# ⑤配列の順番を逆さまにする(検討中)
+# ⑤配列の順番を逆さまにする
 class array_manipulator_reverse:
     arr1 = []
     def __init__(self, input_arr: list):
@@ -101,17 +101,25 @@ class dict_manipulator_last:
             self.dict1[n] = n
         return self.dict1
            
-    # 辞書型の末尾の要素削除   
-    def delete(self):
+    # 辞書型の末尾の要素削除  
+    dict2={} 
+    def delete_last(self):
         cnt = 0
         for i in self.dict1:
             cnt += 1
         
-        dict2={}
         ans = 0
         for i in self.dict1:
-            dict2[i]=self.dict1[i]
+            self.dict2[i]=self.dict1[i]
             ans +=1
             if ans == cnt-1:
                 break
-        return dict2
+        return self.dict2
+    
+    # 辞書型の特定の場所から要素を削除
+    def delete(self, n: str):
+        if n in self.dict2:
+            del self.dict2[n]
+        return self.dict2
+
+

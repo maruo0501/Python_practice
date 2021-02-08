@@ -49,7 +49,7 @@ arr_manip_del_noemp = array_manipulator_deletion_nonempty([0, 1, 2])
 result = arr_manip_del_noemp.delete(1)
 print(result)
 
-# ⑤配列の順番を逆さまにする(検討中)
+# ⑤配列の順番を逆さまにする
 arr_manip_reverse = array_manipulator_reverse([55, 22, 34, 100])
 result = arr_manip_reverse.reverse()
 print(result)
@@ -66,5 +66,10 @@ result = dict_manip_last.edit("orange", "みかん")
 print(result)
 
 # 辞書型の末尾の要素削除  
-result = dict_manip_last.delete()
+result = dict_manip_last.delete_last()
 print(result)
+
+# 辞書型の特定の場所から要素を削除
+result = dict_manip_last.delete("grape")
+print(result)
+
