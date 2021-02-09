@@ -1,7 +1,7 @@
 # ①配列の末尾から要素を追加、編集、削除
 class array_manipulator_last:
     arr = []
-    # クラス変数arr1に引数の値が代入される
+    # クラス変数arrに引数の値が代入される
     def __init__(self, input_arr: list):
         self.arr = input_arr
 
@@ -26,17 +26,17 @@ class array_manipulator_first:
     def __init__(self, input_arr: list):
         self.arr = input_arr
 
-    # ②先頭から要素追加
+    # 先頭の要素追加
     def add(self, n: int):
         self.arr = [n] + self.arr
         return self.arr
     
-    # ②先頭の要素編集
+    # 先頭の要素編集
     def edit(self, n:int):
         self.arr[0] = n
         return self.arr
  
-    # ②先頭の要素削除
+    # 先頭の要素削除
     def delete(self):
         del self.arr[0]
         return self.arr
