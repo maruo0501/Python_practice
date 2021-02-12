@@ -12,13 +12,19 @@ class array_manipulator_last:
     
     # 末尾の要素を編集
     def edit(self, n: int):
-        self.arr[-1] = n
-        return self.arr
+        if self.arr != []:
+            self.arr[-1] = n
+            return self.arr
+        else:
+            print("配列に要素が存在していません")
     
-    # 末尾から要素を削除
+    # 末尾の要素を削除
     def delete(self):
-        del self.arr[-1]
-        return self.arr
+        if self.arr != []:
+            del self.arr[-1]
+            return self.arr
+        else:
+            print("配列に要素が存在していません")
 
 # ②配列の先頭から要素を追加、編集、削除
 class array_manipulator_first:
