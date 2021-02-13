@@ -39,13 +39,19 @@ class array_manipulator_first:
     
     # 先頭の要素編集
     def edit(self, n:int):
-        self.arr[0] = n
-        return self.arr
+        if self.arr != []:
+            self.arr[0] = n
+            return self.arr
+        else:
+            print("配列に要素が存在していません")
  
     # 先頭の要素削除
     def delete(self):
-        del self.arr[0]
-        return self.arr
+        if self.arr != []:
+            del self.arr[0]
+            return self.arr
+        else:
+            print("配列に要素が存在していません")
 
 # ③配列の「特定の場所」から要素を削除して、「削除した番地はあけたまま」
 class array_manipulator_deletion_empty:
@@ -54,8 +60,11 @@ class array_manipulator_deletion_empty:
           self.arr = input_arr
 
     def delete(self, n: int):
-          self.arr[n] = []
-          return self.arr
+        try:
+            self.arr[n] = []
+            return self.arr
+        except IndexError:
+            print("配列に要素が存在していません")
 
 # ④配列の「特定の場所」から要素を削除して、「削除した番地を詰める」
 class array_manipulator_deletion_nonempty:
@@ -64,8 +73,11 @@ class array_manipulator_deletion_nonempty:
         self.arr = input_arr
     
     def delete(self, n: int):
-        del self.arr[n]
-        return self.arr
+        try:
+            del self.arr[n]
+            return self.arr
+        except IndexError:
+            print("配列に要素が存在していません")
 
 # ⑤配列の順番を逆さまにする
 class array_manipulator_reverse:
@@ -103,8 +115,10 @@ class dict_manipulator_last:
     def edit(self, n: str, m: str):
         if n in self.dict1:
             self.dict1[n] = m
-        return self.dict1
-           
+            return self.dict1
+        else:
+            print("辞書に要素が存在していません")
+        
     # 辞書型の末尾の要素削除  
     def delete_last(self):
         cnt = 0
@@ -112,17 +126,25 @@ class dict_manipulator_last:
             cnt += 1
         
         ans = 0
-        for i in self.dict1:
-            self.dict2[i]=self.dict1[i]
-            ans +=1
-            if ans == cnt-1:
-                break
-        return self.dict2
-    
+        if cnt == 1:
+            self.dict1 = {}
+            return self.dict1
+        elif self.dict1 == {}:
+            print("辞書に要素が存在していません")
+        else:
+            for i in self.dict1:
+                self.dict2[i]=self.dict1[i]
+                ans +=1
+                if ans == cnt-1:
+                    break
+            return self.dict2
+
     # 辞書型の特定の場所から要素を削除
     def delete(self, n: str):
         if n in self.dict2:
             del self.dict2[n]
-        return self.dict2
+            return self.dict2
+        else:
+            print("辞書に要素が存在していません")
 
 
